@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div id="main">
+    <p>{{ .Site.Params.siteDescription | markdownify | safeHTML}}</p>
+    <ul>
+        {{ range (.Site.RegularPages.ByPublishDate.Reverse) }}
+        {{- if (ne .Params.isPost false) -}}
+        {{- $dateTime := .PublishDate.Format "2006-01-02" -}}
+        <li>
+            <span class="mr-2"><code><small>
+                <time datetime="{{ $dateTime }}">{{ $dateTime }}</time>
+            </small></code></span>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

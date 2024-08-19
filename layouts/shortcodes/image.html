@@ -1,0 +1,12 @@
+{{- if ( .Get "collapse" ) -}}
+<details>
+    <summary>{{ .Get "caption" }}</summary>
+    <div class="align-center mt-3">
+        <img alt="{{ .Get "alt" }}" src="{{ .Get "src" }}" />
+    </div>
+</details>
+{{- else -}}
+<div class="align-center mt-3">
+    <img alt="{{ .Get "alt" }}" src="{{ .Get "src" }}" />
+</div>
+{{- end -}}

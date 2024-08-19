@@ -1,0 +1,11 @@
+<h1>{{ .Site.Params.SiteHeader | markdownify | safeHTML }}</h1>
+{{- if ne (len .Site.Params.headers) 0 -}}
+<div class="align-left mb-3">
+    {{- $l := len .Site.Params.headers -}}
+    {{ range $i, $v := .Site.Params.headers }}
+    <a href="{{ $v.href }}" rel="{{ $v.rel }}" target="{{ $v.target }}" class="">{{ $v.text }}</a>
+    {{- if ne $i (sub $l 1) -}}&nbsp;|&nbsp;{{- end -}}
+    {{ end }}
+</div>
+<hr />
+{{ end }}

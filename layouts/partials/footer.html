@@ -1,0 +1,10 @@
+{{- if ne (len .Site.Params.footers) 0 -}}
+<hr />
+<div class="align-left mb-3">
+    {{- $l := len .Site.Params.footers -}}
+    {{ range $i, $v := .Site.Params.footers }}
+    <a href="{{ $v.href }}" rel="{{ $v.rel }}" target="{{ $v.target }}" class="">{{ $v.text }}</a>
+    {{- if ne $i (sub $l 1) -}}&nbsp;|&nbsp;{{- end -}}
+    {{ end }}
+</div>
+{{ end }}
