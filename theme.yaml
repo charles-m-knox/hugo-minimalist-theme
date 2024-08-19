@@ -1,22 +1,16 @@
 name: "minimalist-theme"
 license: "AGPL-3.0"
 licenselink: "https://www.gnu.org/licenses/agpl-3.0.en.html"
-description: ""
-homepage: ""
+description: "A minimalist theme that is intended to work with non-javascript browsers as well as modern browsers."
+homepage: "https://git.cmcode.dev/cmcode/hugo-minimalist-theme"
 tags: []
 features: []
 min_version: "0.41.0"
 
 author:
-  name: ""
-  homepage: ""
-
-# If porting an existing theme
-original:
-  name: ""
-  homepage: ""
-  repo: ""
-
-minify:
-  minifyOutput: true
-  disableCSS: false
+  name: "code@cmcode.dev"
+  homepage: "https://git.cmcode.dev/cmcode"
+#
+# minify:
+#   minifyOutput: true
+#   disableCSS: false

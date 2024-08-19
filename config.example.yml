@@ -1,0 +1,81 @@
+baseURL: "https://example.com/"
+languageCode: "en-us"
+title: "Example Website Title"
+theme: "minimalist-theme"
+
+params:
+  siteDescription: |
+    Welcome to [example.com](https://example.com).
+
+    ---
+  siteHeader: "[Example Website Title](/home)"
+  assets:
+    favicon: "/favicon.svg"
+    favicon16x16: "/favicon.svg"
+    favicon32x32: "/favicon.svg"
+    safari_pinned_tab: "/favicon.svg"
+    apple_touch_icon: "/favicon.svg"
+  headers:
+    - href: /home
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Home
+    - href: /
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Blog
+    - href: /about
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: About
+    - href: /events
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Events
+    - href: /contact
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Contact
+    - href: /donate
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Donate
+    - href: /index.xml
+      rel: noopener nofollow noreferrer
+      target: _blank
+      text: RSS
+  footers:
+    - href: /home
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Home
+    - href: /
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Blog
+    - href: /contact
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Contact
+    - href: /donate
+      rel: noopener nofollow noreferrer
+      target: _self
+      text: Donate
+    - href: /index.xml
+      rel: noopener nofollow noreferrer
+      target: _blank
+      text: RSS
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
