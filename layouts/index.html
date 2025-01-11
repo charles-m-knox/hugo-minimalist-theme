@@ -1,18 +1,18 @@
 {{ define "main" }}
-<div id="main">
+<nav>
+    {{- if ne .Site.Params.siteDescription "" -}}
     <p>{{ .Site.Params.siteDescription | markdownify | safeHTML}}</p>
+    {{- end }}
     <ul>
-        {{ range (.Site.RegularPages.ByPublishDate.Reverse) }}
+        {{- range (.Site.RegularPages.ByPublishDate.Reverse) -}}
         {{- if (ne .Params.isPost false) -}}
         {{- $dateTime := .PublishDate.Format "2006-01-02" -}}
         <li>
-            <span class="mr-2"><code><small>
-                <time datetime="{{ $dateTime }}">{{ $dateTime }}</time>
-            </small></code></span>
+            <time datetime="{{ $dateTime }}" class="mr-2 monospace">{{- $dateTime -}}</time>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
-        {{ end }}
-        {{ end }}
+        {{- end -}}
+        {{- end -}}
     </ul>
-</div>
+</nav>
 {{ end }}

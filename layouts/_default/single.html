@@ -1,31 +1,24 @@
 {{ define "main" }}
-<div>
-    {{ if eq (len .Site.Params.headers) 0 }}
-    <div id="nav-in-page" class="align-left">
-        <a href="/" class="mr-3">Home</a>
-    </div>
-    {{ end }}
-    <div>
-        <div id="content-title">
-            <h1>{{ .Title }}</h1>
-            <p>
-                {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-                <code class="mr-3"><small><time datetime="{{ $dateTime }}">{{ $dateTime }}</time></small></code>
-            </p>
-        </div>
-        <div id="content-body">
-            {{ .Content }}
-        </div>
-        {{- if ( .Params.MastodonPost ) -}}
-        <div>
-            <p>
-                <small>
-                    <a href="{{ .Params.MastodonPost }}" class="mr-3" target="_blank"
-                        rel="noopener noreferrer nofollow">View this post on Mastodon</a>
-                </small>
-            </p>
-        </div>
-        {{- end -}}
-    </div>
-</div>
+{{ if eq (len .Site.Params.headers) 0 }}
+<nav class="align-left">
+    <a href="/" class="mr-3">Home</a>
+</nav>
+{{ end }}
+<header>
+    <h1>{{ .Title }}</h1>
+    <p>
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        <time datetime="{{ $dateTime }}" class="mr-3 monospace">{{ $dateTime }}</time>
+    </p>
+</header>
+<section>
+    {{ .Content }}
+</section>
+{{- if ( .Params.MastodonPost ) -}}
+<section>
+    <p>
+        <a href="{{ .Params.MastodonPost }}" class="mr-3" target="_blank" rel="noopener noreferrer nofollow">View this post on Mastodon</a>
+    </p>
+</section>
+{{- end -}}
 {{ end }}
